@@ -10,6 +10,7 @@
 ###< symfony/framework-bundle ###
 
 ###> symfony/webpack-encore-bundle ###
+/pbulic/node_modules/
 /node_modules/
 /public/build/
 npm-debug.log
