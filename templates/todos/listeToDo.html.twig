@@ -1,37 +1,34 @@
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Todo List</title>
-    <link rel="stylesheet" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.css') }}">
+{% extends 'DashboardTemplate.html.twig' %}
 
-</head>
-<body>
-{% for msg in app.session.flashBag.get('info') %}
-    <div class="alert alert-success m-4">
-        {{ msg }}
-    </div>
-{% endfor %}
-{% for msg in app.session.flashBag.get('error') %}
-    <div class="alert alert-danger m-4">
-        {{ msg }}
-    </div>
-{% endfor %}
+{% block title %}
+    Todo List
+{% endblock %}
 
-<h1 style="text-align: center; margin: 24px">To do List : </h1>
+{% block pageTitle %}
+    Todo List
+{% endblock %}
 
-<ul class="list-group">
-    {% for key,element in todos %}
-        <li class="list-group-item list-group-item-primary m-1">
-            <div class="fw-bold">{{ key }}</div>
-            {{ element }}
-        </li>
+{% block body %}
+
+    {% for msg in app.session.flashBag.get('info') %}
+        <div class="alert alert-success m-4">
+            {{ msg }}
+        </div>
     {% endfor %}
-</ul>
+    {% for msg in app.session.flashBag.get('error') %}
+        <div class="alert alert-danger m-4">
+            {{ msg }}
+        </div>
+    {% endfor %}
 
+    <h1 style="text-align: center; margin: 24px">To do List : </h1>
 
-</body>
-</html>
+    <ul class="list-group">
+        {% for key,element in todos %}
+            <li class="list-group-item list-group-item-primary m-1">
+                <div class="fw-bold">{{ key }}</div>
+                {{ element }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -8,9 +8,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+#[Route('/todos')]
 class TodosController extends AbstractController
 {
-    #[Route('/todos', name: 'todos')]
+    #[Route('/', name: 'todos')]
     public function index(Request $request): Response {
         $session = $request->getSession();
         if (!$session->has('todos')) {
@@ -30,8 +31,12 @@ class TodosController extends AbstractController
         ]);
     }
 
-    #[Route('/todos/add/{name}/{content}', name: "add.name")]
-    public function addToDo(Request $req, $name, $content):RedirectResponse {
+    #[Route(
+        '/add/{name}/{content}',
+        name: "add.name",
+        defaults: ['content' => 'Rien faire']
+    )]
+    public function addToDo(Request $req, $name, $content): RedirectResponse {
         $session = $req->getSession();
 
         if (!$session->has("todos")) {
@@ -55,8 +60,8 @@ class TodosController extends AbstractController
         return $this->redirectToRoute("todos");
     }
 
-    #[Route('/todos/delete/{name}', name: "delete.name")]
-    public function deleteTodo(Request $req, $name):RedirectResponse {
+    #[Route('/delete/{name}', name: "delete.name")]
+    public function deleteTodo(Request $req, $name): RedirectResponse {
         $session = $req->getSession();
 
         if (!$session->has("todos")) {
@@ -78,8 +83,8 @@ class TodosController extends AbstractController
         return $this->redirectToRoute("todos");
     }
 
-    #[Route('/todos/reset', name: "reset")]
-    public function resetTodo(Request $req):RedirectResponse {
+    #[Route('/reset', name: "reset")]
+    public function resetTodo(Request $req): RedirectResponse {
         $session = $req->getSession();
         if (!$session->has("todos")) {
             //show error msg : $todos not initialized
@@ -90,4 +95,5 @@ class TodosController extends AbstractController
         }
         return $this->redirectToRoute('todos', ['reset' => true]);
     }
+
 }
