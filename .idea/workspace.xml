@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a97cfaa-006f-4717-ba80-f71ecbc51304" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/config/routes/cv/routes.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/datatables-simple-demo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/scripts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/DashboardTemplate.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TodosController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TodosController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/DashboardTemplate.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/DashboardTemplate.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/number_table/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/number_table/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/todos/listeToDo.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/todos/listeToDo.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -183,7 +178,7 @@
       <option name="presentableId" value="Default" />
       <updated>1650367040628</updated>
       <workItem from="1650367043010" duration="12225000" />
-      <workItem from="1650904986514" duration="10422000" />
+      <workItem from="1650904986514" duration="11563000" />
     </task>
     <servers />
   </component>

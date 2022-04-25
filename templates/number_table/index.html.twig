@@ -1,29 +1,28 @@
-<!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Number Table</title>
-    <link rel="stylesheet" href={{ asset('node_modules/bootstrap/dist/css/bootstrap.css') }}>
-</head>
-<body>
-<h1>Le tableau généré : </h1>
-<table class="table">
-    <tr>
-        {% for number in array %}
-            <th>{{ number }}</th>
-        {% endfor %}
-    </tr>
-</table>
-<div class="alert alert-info">
-    <h1>Nombre de valeurs : </h1>
-    <h3>{{ array|length }}</h3>
-    <h1>Min : </h1>
-    <h3>{{ min(array) }}</h3>
-    <h1>Max : </h1>
-    <h3>{{ max(array) }}</h3>
-</div>
-</body>
-</html>
+{% extends 'DashboardTemplate.html.twig' %}
+
+{% block title %}
+    Number table
+{% endblock %}
+
+{% block pageTitle %}
+    Le tableau généré
+{% endblock %}
+
+{% block body %}
+
+    <table class="table">
+        <tr>
+            {% for number in array %}
+                <th>{{ number }}</th>
+            {% endfor %}
+        </tr>
+    </table>
+    <div class="alert alert-info">
+        <h1>Nombre de valeurs : </h1>
+        <h3>{{ array|length }}</h3>
+        <h1>Min : </h1>
+        <h3>{{ min(array) }}</h3>
+        <h1>Max : </h1>
+        <h3>{{ max(array) }}</h3>
+    </div>
+{% endblock %}

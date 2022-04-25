@@ -1,7 +1,7 @@
 {% extends 'DashboardTemplate.html.twig' %}
 
 {% block title %}
-    Todo List
+    To do List
 {% endblock %}
 
 {% block pageTitle %}
@@ -9,19 +9,6 @@
 {% endblock %}
 
 {% block body %}
-
-    {% for msg in app.session.flashBag.get('info') %}
-        <div class="alert alert-success m-4">
-            {{ msg }}
-        </div>
-    {% endfor %}
-    {% for msg in app.session.flashBag.get('error') %}
-        <div class="alert alert-danger m-4">
-            {{ msg }}
-        </div>
-    {% endfor %}
-
-    <h1 style="text-align: center; margin: 24px">To do List : </h1>
 
     <ul class="list-group">
         {% for key,element in todos %}
